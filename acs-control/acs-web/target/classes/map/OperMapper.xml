@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.acs.dao.mapper.OperMapper">
+
+	<resultMap type="oper" id="operResult">
+		<result property="sid" column="sid"/>
+		<result property="name" column="name" />
+		<result property="domains" column="domains" />
+	</resultMap>
+	<resultMap type="oper" id="operModuleResult">
+		<result property="sid" column="oper_id"/>
+		<result property="moduleId" column="device_group_id" />
+	</resultMap>
+	<resultMap type="oper" id="operDeviceGroupResult" extends="operResult">
+		<collection property="deviceGroupList" ofType="deviceGroup">
+			<result property="sid" column="groupId"/>
+			<result property="name" column="groupName" />
+		</collection>
+	</resultMap>
+	
+
+	<select id="find" resultMap="operResult" parameterType="oper">
+		select o.sid, o.name, o.domains from oper o
+		<where>
+			<if test="sid != null">
+				and o.sid=#{sid}
+			</if>
+			<if test="name !=null">
+				and o.name like #{name}
+			</if>
+		</where>
+		<trim prefix="limit">
+			<if test="limit!=null">
+		 		#{start},#{limit}
+		 	</if>
+		</trim>
+ 	</select>
+ 	<select id="findOperDeviceGroup" resultMap="operDeviceGroupResult" parameterType="oper">
+		SELECT
+			o.sid,
+			o.NAME,
+			o.domains,
+			d.sid as groupId,
+			d.NAME as groupName
+		FROM
+			oper o
+		LEFT JOIN oper_device_group od ON o.sid = od.oper_id
+		LEFT JOIN modules d ON od.device_group_id = d.sid
+		<where>
+			<if test="sid != null">
+				and o.sid=#{sid}
+			</if>
+			<if test="name !=null">
+				and o.name = #{name}
+			</if>
+		</where>
+ 	</select>
+ 	<insert id="insert" parameterType="oper" useGeneratedKeys="true" keyProperty="sid">
+ 		<selectKey resultType="java.lang.Integer" keyProperty="sid" order="AFTER" >
+		    SELECT @@IDENTITY
+		</selectKey>
+		insert into oper (name,domains)
+		values (#{name},#{domains})
+	</insert>
+	<select id="findOperModule" parameterType="oper" resultMap="operModuleResult">
+		SELECT oper_id,device_group_id FROM oper_device_group 
+		<where>
+			<if test="sid != null">  
+				oper_id=#{sid}
+			</if>
+		</where>
+	</select>
+ 	<insert id="insertOperModule" parameterType="oper">
+		insert into oper_device_group (oper_id, device_group_id)
+		values (#{sid},#{moduleId})
+	</insert>
+	<update id="update" parameterType="oper">
+		update oper
+		<set>
+			<if test="name != null"> 
+				name = #{name},
+			</if>
+			<if test="domains != null"> 
+				domains = #{domains},
+			</if>
+		</set>
+		where sid = #{sid}
+	</update>
+	<delete id="delete" parameterType="oper">
+		delete from oper 
+		<where>
+			<if test="sid != null">  
+				sid=#{sid}
+			</if>
+			<if test="name != null">  
+				and name like #{name}
+			</if>
+		</where>
+	</delete>
+	<delete id="deleteOperModule" parameterType="oper">
+		delete from oper_device_group 
+		<where>
+			<if test="sid != null">  
+				oper_id=#{sid}
+			</if>
+		</where>
+	</delete>
+	<select id="findCount" resultType="Long">
+		select count(*) from oper o
+		<where>
+			<if test="name !=null">
+				and o.name like #{name}
+			</if>
+		</where>
+	</select>
+</mapper>

@@ -1,0 +1,28 @@
+.logo_div{
+	float: left;
+	padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+}
+.logo a{
+	/*background: url("../img/logo.png") no-repeat scroll 0 8px rgba(0, 0, 0, 0);*/
+	display: block;
+    height: 60px;
+    line-height: 60px;
+}
+.logo span{
+	margin-left: 60px;
+}
+.user_div{
+	float: right;
+	height: 100%;
+}
+.user-ul{
+	min-width: 160px;
+}
+.content{
+	min-height: calc(100% - 140px);
+}
+footer .copy{
+	text-align:center;
+}

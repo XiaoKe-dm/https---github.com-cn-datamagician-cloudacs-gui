@@ -1,0 +1,12 @@
+.form-horizontal .control-label {
+	width: 140px;
+}
+.inline-select{
+	float: left !important;
+    margin-right: 5px;
+}
+.btn-custom-files{
+	height:34px;
+	line-height:34px;
+	padding:0;
+}

@@ -1,0 +1,48 @@
+.form-horizontal .control-label {
+	width: 140px;
+}
+.inline-select{
+	float: left !important;
+    margin-right: 5px;
+}
+.inline-select-symbol{
+	width: 50px !important;
+}
+.to-group{
+	float: left;
+    font-size: 14px;
+    line-height: 30px;
+    width: 40px;
+    text-align: center;
+}
+
+.tagbtn{
+	float: left;
+	height:30px;
+}
+.tagbtn a {
+    color: #333333;
+    display: block;
+    float: left;
+    height: 22px;
+    line-height: 22px;
+    overflow: hidden;
+    padding: 0 5px 0 5px;
+    white-space: nowrap;
+    margin: 4px 2px 0 5px;
+}
+.plus-tag a span {
+    float: left;
+}
+.plus-tag{padding:0;overflow-x: hidden;}
+.plus-tag a,.plus-tag a em{background:url(../../img/tagbg.png) no-repeat;}
+.plus-tag a{background-position:100% -22px;}
+.plus-tag a span{float:left;}
+.plus-tag a em{display:block;float:left;margin:5px 0 0 8px;width:13px;height:13px;overflow:hidden;background-position:-165px -100px;cursor:pointer;}
+.plus-tag a:hover em{background-position:-167px -64px;}
+.font_red{
+	color:red
+}
+.font_blue{
+	color:blue;
+}

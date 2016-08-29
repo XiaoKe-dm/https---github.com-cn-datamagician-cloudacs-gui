@@ -1,0 +1,128 @@
+.content {
+	height: calc(100% - 140px);
+}
+
+.mainbar {
+	height: 100%;
+}
+
+.mainbar .matter {
+	height: calc(100% - 60px);
+}
+
+.mainbar .matter .matter-head {
+	background-color: #f8f8f8;
+/* 	padding: 10px 0; */
+	background: -webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#f2f2f2));
+	background: -webkit-linear-gradient(top, #f8f8f8, #f2f2f2);
+	background: -moz-linear-gradient(top, #f8f8f8, #f2f2f2);
+	background: -ms-linear-gradient(top, #f8f8f8, #f2f2f2);
+	background: -o-linear-gradient(top, #f8f8f8, #f2f2f2);
+	background: linear-gradient(top, #f8f8f8, #f2f2f2);
+}
+.mainbar .matter .matter-head nav{
+	margin:0px;
+}
+.navbar-form{
+/* 	width: 300px; */
+}
+.form-control{
+	border-radius: 0px;
+/* 	float: left; */
+}
+.am-search-span{
+	height: 34px;
+	width: 60px;
+/* 	float: left; */
+}
+.am-search-span .am-search-span-btn{
+    height: 34px;
+	width: 60px;
+    font-size: 12px;
+    color: #444;
+    border: 1px #ccc solid;
+    background-color: #e6e6e6;
+    cursor: hand;
+    font-style: normal;
+}
+.am-search-span .am-search-span-btn:hover{
+	background-color: #d4d4d4;
+}
+.matter-table {
+	height: calc(100% - 51px);
+}
+.matter-table .widget{
+	margin: 0px;
+	border-bottom: 0;
+	border-left: 0;
+	border-right: 0;
+}
+.matter-table .widget{
+	height: 100%;
+}
+.matter-table .widget .widget-content{
+	height: 100%;
+}
+.group-table{
+	height: calc(100% - 64px);
+}
+.group-table thead tr{
+	height:50px;
+}
+.group-table tbody td{
+	vertical-align:middle !important;
+}
+.modal-dialog{
+/* 	margin-top: 150px; */
+}
+.importance{
+	font-size:16px;
+	color:#f00;
+	margin-left: 2px;
+}
+.modal-content {
+	border-radius: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none
+}
+
+.modal-footer {
+	padding-top: 12px;
+	padding-bottom: 14px;
+	border-top-color: #e4e9ee;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	background-color: #eff3f8
+}
+
+.modal-header .close {
+	font-size: 32px
+}
+.help-button {
+    background-color: #65bcda;
+    border: 2px solid #fff;
+    border-radius: 100%;
+    box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    cursor: default;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    height: 22px;
+    line-height: 22px;
+    margin-left: 4px;
+    padding: 0;
+    text-align: center;
+    width: 22px;
+}
+.mask {
+	background-color: #b2b2b2;
+	width: 100%;
+	min-height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 999999999;
+	opacity: 0.5;
+	display: none;
+}

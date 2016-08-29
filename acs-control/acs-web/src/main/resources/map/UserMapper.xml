@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.acs.dao.mapper.UserMapper">
+	<sql id="Select_Field_Clause">
+		username,password
+	</sql>
+	<resultMap type="user" id="userResult">
+		<result property="sid" column="sid"/>
+		<result property="username" column="username" />
+		<result property="password" column="password" />
+		<result property="manager" column="is_manager" />
+		<result property="oper" column="name" />
+		<result property="operId" column="operId" />
+	</resultMap>
+	<resultMap type="oper" id="operResult">
+		<result property="sid" column="sid"/>
+		<result property="name" column="name" />
+	</resultMap>
+	
+
+	<select id="find" resultMap="userResult" parameterType="user">
+		select u.sid, u.username, u.is_manager,u.oper_id operId,o.name from user u LEFT JOIN oper o ON u.oper_id = o.sid
+		<where>
+			<if test="sid != null">
+				and u.sid=#{sid}
+			</if>
+			<if test="username !=null">
+				and u.username like #{username}
+			</if>
+			<if test="password !=null">
+				and u.password=#{password}
+			</if>
+		</where>
+		<trim prefix="limit">
+			<if test="limit!=null">
+		 		#{start},#{limit}
+		 	</if>
+		</trim>
+ 	</select>
+ 	<select id="findByPrimaryKey" resultMap="userResult">
+		select u.sid, u.username, u.password, u.is_manager,u.oper_id operId,o.name from user u LEFT JOIN oper o ON u.oper_id = o.sid
+		<where>
+			<if test="_parameter != null">
+				u.sid=#{_parameter}
+			</if>
+		</where>
+ 	</select>
+ 	<insert id="insert" parameterType="user">
+		insert into user (username, password,is_manager,oper_id)
+		values (#{username},#{password},#{manager},#{oper})
+	</insert>
+	<update id="update" parameterType="user">
+		update user
+		<set>
+			<if test="username != null"> 
+				username = #{username},
+			</if>
+			<if test="password != null"> 
+				password = #{password},
+			</if>
+			<if test="manager != null"> 
+				is_manager = #{manager},
+			</if>
+			<if test="operId != null and operId > 0"> 
+				oper_id = #{operId}
+			</if>
+		</set>
+		where sid = #{sid}
+	</update>
+	<delete id="delete" parameterType="user">
+		DELETE FROM user 
+		<where>
+			<if test="sid != null">  
+				sid=#{sid}
+			</if>
+			<if test="username != null">  
+				and username=#{username}
+			</if>
+			<if test="password != null">  
+				and password=#{password}
+			</if>
+		</where>
+	</delete>
+	<select id="findCount" resultType="Long">
+		SELECT count(*) FROM user
+		<where>
+			<if test="username !=null">
+				username like #{username}
+			</if>
+		</where>
+	</select>
+	
+	<select id="findAllOper" resultMap="operResult" parameterType="oper">
+		select sid, name from oper
+		<where>
+			<if test="sid != null">
+				and sid=#{sid}
+			</if>
+			<if test="name !=null">
+				and name=#{name}
+			</if>
+		</where>
+		<trim prefix="limit">
+			<if test="limit!=null">
+		 		#{start},#{limit}
+		 	</if>
+		</trim>
+ 	</select>
+</mapper>

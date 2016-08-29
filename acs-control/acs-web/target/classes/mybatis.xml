@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">  
+<configuration>
+	<settings>
+		<setting name="logImpl" value="LOG4J2" />
+	</settings>
+    <typeAliases>  
+        <typeAlias alias="user" type="org.acs.utils.model.User" />
+        <typeAlias alias="oper" type="org.acs.utils.model.Oper" />
+        <typeAlias alias="deviceGroup" type="org.acs.utils.model.DeviceGroup" />
+        <typeAlias alias="modules" type="org.acs.core.model.Modules" />
+   </typeAliases>
+    <mappers>
+    </mappers>
+</configuration> 

@@ -1,0 +1,306 @@
+.mask {
+	background-color: #b2b2b2;
+	width: 100%;
+	min-height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 999999999;
+	opacity: 0.5;
+	display: none;
+}
+.content {
+	height: calc(100% - 140px);
+}
+
+.mainbar {
+	height: 100%;
+}
+
+.mainbar .matter {
+	height: calc(100% - 60px);
+}
+
+.mainbar .matter .matter-head {
+	background-color: #f8f8f8;
+/* 	padding: 10px 0; */
+	background: -webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#f2f2f2));
+	background: -webkit-linear-gradient(top, #f8f8f8, #f2f2f2);
+	background: -moz-linear-gradient(top, #f8f8f8, #f2f2f2);
+	background: -ms-linear-gradient(top, #f8f8f8, #f2f2f2);
+	background: -o-linear-gradient(top, #f8f8f8, #f2f2f2);
+	background: linear-gradient(top, #f8f8f8, #f2f2f2);
+}
+.mainbar .matter .matter-head nav{
+	margin:0px;
+}
+.navbar-form{
+/* 	width: 455px; */
+}
+.form-control{
+	border-radius: 0px;
+	width: 200px;
+/* 	float: left; */
+}
+.am-search-span{
+	height: 34px;
+	width: 60px;
+/* 	float: left; */
+}
+.am-search-span .am-search-span-btn{
+    height: 34px;
+	width: 60px;
+    font-size: 12px;
+    color: #444;
+    border: 1px #ccc solid;
+    background-color: #e6e6e6;
+    cursor: hand;
+    font-style: normal;
+}
+.am-search-span .am-search-span-btn:hover{
+	background-color: #d4d4d4;
+}
+.matter-table {
+	height: calc(100% - 70px);
+}
+.matter-table .widget{
+	margin: 0px;
+	border-bottom: 0;
+	border-left: 0;
+	border-right: 0;
+}
+.matter-table .widget{
+	height: 100%;
+}
+.matter-table .widget .widget-content{
+	height: 100%;
+}
+.group-table{
+	height: calc(100% - 64px);
+}
+.user-table thead tr{
+	height:50px;
+}
+.user-table tbody td{
+	vertical-align:middle !important;
+}
+.modal-dialog{
+/* 	margin-top: 150px; */
+}
+.modal{
+	overflow-x: hidden !important;
+    overflow-y: hidden !important;
+}
+.modal .modal-operate-button{
+	
+}
+.modal .device-modal-info{
+	
+}
+#parameters_tab .device_parameters_div .device_parameters_control{
+	float:right;
+	clear:both;
+	margin-right: 10px;
+}
+#parameters_tab .device_parameters_div .device_parameters_search{
+	height: 26px;
+    margin-bottom: 5px;
+}
+#parameters_tab .device_parameters_div .device_parameters_search input{
+	height: 24px;
+    padding: 1px 5px;
+    width: 600px;
+}
+#parameters_tab .device_parameters_div .device_parameters_context{
+	clear:both;
+	max-height:240px;
+	overflow-y: auto;
+}
+#parameters_tab .device_parameters_div .device_parameters_context .device_parameters_info:hover{
+	background-color:#f5f5f5;
+}
+#parameters_tab .device_parameters_div .device_parameters_control .btn{
+	padding:0 !important;
+}
+#device_tags{
+	height:31px;
+}
+#device_tags strong{
+	float: left;
+	height:31px;
+	line-height:31px;
+}
+#device_tags button{
+	float: left;
+}
+.tagbtn{
+	float: left;
+	height:31px;
+}
+.tagbtn a {
+    color: #333333;
+    display: block;
+    float: left;
+    height: 22px;
+    line-height: 22px;
+    overflow: hidden;
+    padding: 0 5px 0 5px;
+    white-space: nowrap;
+    margin: 4px 2px 0 5px;
+}
+.plus-tag a span {
+    float: left;
+}
+.plus-tag{padding:0;}
+.plus-tag a,.plus-tag a em{background:url(../../img/tagbg.png) no-repeat;}
+.plus-tag a{background-position:100% -22px;}
+.plus-tag a span{float:left;}
+.plus-tag a em{display:block;float:left;margin:5px 0 0 8px;width:13px;height:13px;overflow:hidden;background-position:-165px -100px;cursor:pointer;}
+.plus-tag a:hover em{background-position:-167px -64px;}
+.btn-param{
+	padding:0;
+	margin-right:5px;
+}
+#device_parameters_context td{
+	padding:0 !important;
+	word-wrap:break-word !important;
+}
+.param_value{
+	
+}
+.param_control{
+	text-align: right;
+}
+.device_block{
+	border: 1px solid #e3e3e3;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+    margin: 15px 0px 10px;
+    padding:10px;
+}
+.device_block .title{
+	display:block;
+	width:84px;
+	position:absolute;
+	text-align: center;
+	top:5px;
+	background: white;
+}
+.device_info_row{
+}
+.wifi{
+	width:16px;
+	height: 16px;
+	background:url(../../img/wifi.png);
+}
+.network{
+	width:16px;
+	height: 16px;
+	background:url(../../img/network.png);
+}
+<!-- start tab left -->
+.tabs-right>.nav-tabs.padding-22,
+.tabs-left>.nav-tabs.padding-22 {
+	padding-left: 0;
+	padding-top: 22px
+}
+.tabs-right>.nav-tabs.padding-20,
+.tabs-left>.nav-tabs.padding-20 {
+	padding-left: 0;
+	padding-top: 20px
+}
+.tabs-right>.nav-tabs.padding-18,
+.>.nav-tabs.padding-18 {
+	padding-left: 0;
+	padding-top: 18px
+}
+.tabs-right>.nav-tabs.padding-16,
+.tabs-left>.nav-tabs.padding-16 {
+	padding-left: 0;
+	padding-top: 16px
+}
+.tabs-right>.nav-tabs.padding-14,
+.tabs-left>.nav-tabs.padding-14 {
+	padding-left: 0;
+	padding-top: 14px
+}
+.tabs-right>.nav-tabs.padding-12,
+.tabs-left>.nav-tabs.padding-12 {
+	padding-left: 0;
+	padding-top: 12px
+}
+.tabs-right>.nav-tabs.padding-10,
+.tabs-left>.nav-tabs.padding-10 {
+	padding-left: 0;
+	padding-top: 10px
+}
+.tabs-right>.nav-tabs.padding-8,
+.tabs-left>.nav-tabs.padding-8 {
+	padding-left: 0;
+	padding-top: 8px
+}
+.tabs-right>.nav-tabs.padding-6,
+.tabs-left>.nav-tabs.padding-6 {
+	padding-left: 0;
+	padding-top: 6px
+}
+.tabs-right>.nav-tabs.padding-4,
+.tabs-left>.nav-tabs.padding-4 {
+	padding-left: 0;
+	padding-top: 4px
+}
+.tabs-right>.nav-tabs.padding-2,
+.tabs-left>.nav-tabs.padding-2 {
+	padding-left: 0;
+	padding-top: 2px
+}
+.tabs-left>.nav-tabs>li>a,
+.tabs-right>.nav-tabs>li>a {
+	min-width: 60px
+}
+
+.tabs-left>.nav-tabs {
+	top: auto;
+	margin-bottom: 0;
+	border-color: #c5d0dc;
+	float: left
+}
+
+.tabs-left>.nav-tabs>li {
+	float: none
+}
+
+.tabs-left>.nav-tabs>li.active>a,
+.tabs-left>.nav-tabs>li.active>a:focus,
+.tabs-left>.nav-tabs>li.active>a:hover {
+	border-color: #c5d0dc;
+	border-top-width: 1px;
+	border-left: 2px solid #4c8fbd;
+	border-right-color: transparent;
+	margin: 0 -1px 0 -1px;
+	-webkit-box-shadow: -2px 0 3px 0 rgba(0, 0, 0, 0.15);
+	box-shadow: -2px 0 3px 0 rgba(0, 0, 0, 0.15)
+}
+.tabs-left>.nav-tabs>li>a,
+.tabs-left>.nav-tabs>li>a:focus,
+.tabs-left>.nav-tabs>li>a:hover {
+	border-color: #c5d0dc;
+	margin: 0 -1px 0 0
+}
+.tabs-left .tab-content,
+.tabs-right .tab-content {
+	overflow: hidden;
+	border: 1px solid #c5d0dc;
+    padding: 16px 12px;
+    position: relative;
+    z-index: 11;
+}
+.nav-tabs > li > a, .nav-tabs > li > a:focus {
+    background-color: #f9f9f9;
+    border-radius: 0 !important;
+    color: #999;
+    line-height: 16px;
+    position: relative;
+    z-index: 11;
+}
+<!-- end tab left -->

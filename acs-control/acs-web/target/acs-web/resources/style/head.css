@@ -1,0 +1,47 @@
+.total_devices{
+	background: url("../img/icons/1.png") no-repeat scroll 20px 13px rgba(0, 0, 0, 0);
+	color: #5eb95e;
+	font-size: 18px;
+}
+.total_devices h3{
+	color: #5eb95e;
+}
+.unknown_devices{
+	background: url("../img/icons/2.png") no-repeat scroll 20px 13px rgba(0, 0, 0, 0);
+	color: #f37b1d;
+	font-size: 18px;
+}
+.unknown_devices h3{
+	color: #f37b1d;
+}
+.per_day{
+	background: url("../img/icons/3.png") no-repeat scroll 20px 13px rgba(0, 0, 0, 0);
+	color: #dd514c;
+	font-size: 18px;
+}
+.per_day h3{
+	color: #dd514c;
+}
+.active_devices{
+	background: url("../img/icons/4.png") no-repeat scroll 20px 13px rgba(0, 0, 0, 0);
+	color: #3bb4f2;
+	font-size: 18px;
+}
+.active_devices h3{
+	color: #3bb4f2;
+}
+.well{
+	padding-left:90px;
+	cursor: pointer;
+}
+.form-horizontal .control-label {
+    width: 150px;
+}
+.important_red{
+	color: #ff0000;
+}
+#warning-info{
+	margin-bottom: 0px;
+	padding:2px 2px 2px 15px;
+	color: #ff0000;
+}

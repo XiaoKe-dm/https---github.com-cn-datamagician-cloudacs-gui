@@ -1,0 +1,18 @@
+.display_name{
+	text-align: center;
+	height: 200px;
+}
+.display_name span{
+	line-height: 200px;
+	font-size: 40px;
+	font-style: italic;
+	font-weight: bold;
+}
+.admin-form{
+	margin-top: 0;
+}
+.message-info{
+	margin-left: 110px;
+	color: #FF0000;
+	text-align: center;
+}

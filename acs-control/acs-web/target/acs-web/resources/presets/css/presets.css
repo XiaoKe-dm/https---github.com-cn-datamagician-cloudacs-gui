@@ -1,0 +1,17 @@
+.form-horizontal .control-label {
+	width: 140px;
+}
+.inline-select{
+	float: left !important;
+    margin-right: 5px;
+}
+.inline-select-symbol{
+	width: 50px !important;
+}
+.to-group{
+	float: left;
+    font-size: 14px;
+    line-height: 30px;
+    width: 40px;
+    text-align: center;
+}

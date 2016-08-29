@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.acs.dao.mapper.ModulesMapper">
+	<resultMap type="modules" id="modulesResult">
+		<result property="sid" column="sid"/>
+		<result property="name" column="name" />
+		<result property="productClass" column="product_class" />
+		<result property="oui" column="oui" />
+		<result property="manufacturer" column="manufacturer" />
+		<result property="description" column="description" />
+	</resultMap>
+
+	<select id="find" resultMap="modulesResult" parameterType="modules">
+		select sid,name,product_class,oui,manufacturer,description from modules
+		<where>
+			<if test="sid != null">
+				sid=#{sid}
+			</if>
+			<if test="modulesList != null">
+				sid in
+				<foreach collection="modulesList" index="index" item="module" open="("
+				    separator="," close=")">
+				   #{module}
+				</foreach>
+			</if>
+			<if test="name !=null">
+				and name like #{name}
+			</if>
+			<if test="productClass !=null">
+				and product_class=#{productClass}
+			</if>
+			<if test="oui !=null">
+				and oui=#{oui}
+			</if>
+			<if test="manufacturer !=null">
+				and manufacturer=#{manufacturer}
+			</if>
+			<if test="description !=null">
+				and description=#{description}
+			</if>
+		</where>
+		<trim prefix="limit">
+			<if test="limit!=null">
+		 		#{start},#{limit}
+		 	</if>
+		</trim>
+ 	</select>
+ 	<select id="findByPrimaryKey" resultMap="modulesResult">
+		select sid,name,product_class,oui,manufacturer,description from modules
+		<where>
+			<if test="_parameter != null">
+				sid=#{_parameter}
+			</if>
+		</where>
+ 	</select>
+ 	<insert id="insert" parameterType="modules">
+		insert into modules (name,product_class,oui,manufacturer,description)
+		values (#{name},#{productClass},#{oui},#{manufacturer},#{description})
+	</insert>
+	<update id="update" parameterType="modules">
+		update modules
+		<set>
+			<if test="name != null"> 
+				name = #{name},
+			</if>
+			<if test="productClass != null"> 
+				product_class = #{productClass},
+			</if>
+			<if test="oui != null"> 
+				oui = #{oui},
+			</if>
+			<if test="manufacturer != null"> 
+				manufacturer = #{manufacturer}
+			</if>
+			<if test="description != null"> 
+				description = #{description}
+			</if>
+		</set>
+		where sid = #{sid}
+	</update>
+	<delete id="delete" parameterType="user">
+		delete from modules 
+		<where>
+			<if test="sid != null">  
+				sid=#{sid}
+			</if>
+			<if test="name !=null">
+				and name=#{name}
+			</if>
+			<if test="productClass !=null">
+				and product_class=#{productClass}
+			</if>
+			<if test="oui !=null">
+				and oui=#{oui}
+			</if>
+			<if test="manufacturer !=null">
+				and manufacturer=#{manufacturer}
+			</if>
+			<if test="description !=null">
+				and description=#{description}
+			</if>
+		</where>
+	</delete>
+	<select id="findCount" resultType="Long">
+		select count(*) from modules
+		<where>
+			<if test="modulesList != null">
+				sid in
+				<foreach collection="modulesList" index="index" item="module" open="("
+				    separator="," close=")">
+				   #{module}
+				</foreach>
+			</if>
+			<if test="name !=null">
+				and name like #{name}
+			</if>
+			<if test="productClass !=null">
+				and product_class=#{productClass}
+			</if>
+			<if test="oui !=null">
+				and oui=#{oui}
+			</if>
+			<if test="manufacturer !=null">
+				and manufacturer=#{manufacturer}
+			</if>
+			<if test="description !=null">
+				and description=#{description}
+			</if>
+		</where>
+	</select>
+</mapper>
